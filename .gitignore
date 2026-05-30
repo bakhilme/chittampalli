@@ -1,0 +1,24 @@
+# Kiro spec files (development only)
+.kiro/
+
+# Component reference snippets (not needed in production)
+_components/
+
+# Test files (not needed in production)
+tests/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node modules (if any get installed for testing)
+node_modules/
+package-lock.json
