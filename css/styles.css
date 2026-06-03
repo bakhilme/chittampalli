@@ -1262,8 +1262,9 @@ body.menu-open {
 }
 
 .page-banner h1 {
-  color: var(--color-bg);
+  color: var(--color-accent-light);
   margin-bottom: var(--space-xs);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-banner p {
