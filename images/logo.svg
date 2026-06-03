@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" width="220" height="50">
   <!-- Leaf icon -->
-  <g transform="translate(0, 8)">
+  <g transform="translate(2, 6)">
     <path d="M20 36 C20 36 8 28 8 18 C8 8 16 2 24 2 C32 2 36 8 36 14 C36 24 24 32 20 36Z" fill="#2d6a4f" stroke="#1b4332" stroke-width="1"/>
     <path d="M20 36 C20 36 14 24 18 14 C20 10 24 6 28 8" fill="none" stroke="#40916c" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M18 14 C22 16 24 20 22 24" fill="none" stroke="#40916c" stroke-width="1" stroke-linecap="round"/>
     <path d="M20 20 C24 18 26 14 24 10" fill="none" stroke="#40916c" stroke-width="1" stroke-linecap="round"/>
   </g>
   <!-- Company name -->
-  <text x="48" y="22" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#1b4332">CHITTAMPALLI</text>
-  <text x="48" y="38" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#2d6a4f" letter-spacing="2">EXPORTS PVT LTD</text>
+  <text x="50" y="20" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#1b4332">CHITTAMPALLI</text>
+  <text x="50" y="36" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#2d6a4f" letter-spacing="1.5">EXPORTS PVT LTD</text>
 </svg>
