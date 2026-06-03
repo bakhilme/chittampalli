@@ -1,0 +1,23 @@
+{
+  "name": "chittampalli-exports-website",
+  "version": "1.0.0",
+  "description": "Official website for Chittampalli Exports Private Limited",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "exports",
+    "agriculture",
+    "india",
+    "spices",
+    "fruits",
+    "vegetables"
+  ],
+  "author": "Chittampalli Exports Private Limited",
+  "license": "ISC"
+}

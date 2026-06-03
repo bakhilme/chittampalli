@@ -1,213 +1,761 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chittampalli Exports Private Limited — Premium Indian Agri-Exports</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chittampalli Exports Private Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1e4535;
+  --forest-deep:#112a1f;
+  --forest-mid:#2a6045;
+  --ivory:#f8f6f1;
+  --ivory2:#f0ece4;
+  --ivory3:#e5dfd4;
+  --amber:#b8600e;
+  --amber-light:#d4782a;
+  --amber-pale:#fdf2e8;
+  --ink:#1a1a1a;
+  --ink2:#3a3a3a;
+  --muted:#7a7a7a;
+  --lighter:#aaaaaa;
+  --white:#ffffff;
+  --border:#ddd8cc;
+  --border-strong:#c8c0b0;
+  --ff-serif:'Libre Baskerville',Georgia,serif;
+  --ff-sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--ff-sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-  <!-- Preconnect for Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 5vw;height:72px;display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.stuck{border-color:var(--border);box-shadow:0 1px 24px rgba(0,0,0,.06)}
+.nav-logo{display:flex;flex-direction:column;gap:1px;text-decoration:none}
+.nav-logo-main{font-family:var(--ff-serif);font-size:1.05rem;color:var(--forest-deep);letter-spacing:.01em;font-weight:700}
+.nav-logo-sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-family:var(--ff-sans);font-weight:400}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);text-decoration:none;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--forest);color:var(--white);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.65rem 1.6rem;text-decoration:none;border:1.5px solid var(--forest);transition:background .2s,color .2s}
+.nav-cta:hover{background:transparent;color:var(--forest)}
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+/* HERO */
+#hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;padding-top:72px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:7vw 5vw 7vw 5vw;background:var(--white)}
+.hero-right{position:relative;overflow:hidden;min-height:580px}
+.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-right-overlay{position:absolute;inset:0;background:rgba(17,42,31,.18)}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem}
+.hero-eyebrow-line{width:32px;height:1.5px;background:var(--amber)}
+.hero-eyebrow span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:500}
+.hero-h1{font-family:var(--ff-serif);font-size:clamp(2.6rem,4vw,4rem);font-weight:700;line-height:1.12;color:var(--forest-deep);margin-bottom:1rem}
+.hero-h1 em{font-style:italic;color:var(--amber);font-weight:400}
+.hero-p{font-size:1rem;line-height:1.85;color:var(--muted);max-width:460px;margin-bottom:2.4rem;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.btn-fill{background:var(--amber);color:var(--white);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.9rem 2rem;text-decoration:none;font-family:var(--ff-sans);border:1.5px solid var(--amber);transition:background .2s,color .2s}
+.btn-fill:hover{background:transparent;color:var(--amber)}
+.btn-outline{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--forest);border:1.5px solid var(--forest);padding:.9rem 2rem;text-decoration:none;transition:background .2s,color .2s}
+.btn-outline:hover{background:var(--forest);color:var(--white)}
+.hero-stats{display:flex;gap:0;margin-top:3.5rem;border-top:1px solid var(--border);padding-top:2rem}
+.hero-stat{padding-right:2.5rem;margin-right:2.5rem;border-right:1px solid var(--border)}
+.hero-stat:last-child{border-right:none;margin-right:0;padding-right:0}
+.hero-stat-n{font-family:var(--ff-serif);font-size:2rem;font-weight:700;color:var(--forest-deep)}
+.hero-stat-l{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+.hero-badge{position:absolute;bottom:2rem;left:2rem;background:var(--white);padding:1rem 1.4rem;border-left:3px solid var(--amber);z-index:2}
+.hero-badge p{font-family:var(--ff-serif);font-size:.95rem;color:var(--forest-deep);font-weight:700}
+.hero-badge small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
-  <!-- Progressive enhancement: swap no-js to js class -->
-  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+/* TRUST BAR */
+#trustbar{background:var(--forest-deep);padding:1.4rem 5vw;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.7rem;color:rgba(255,255,255,.65);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.trust-item svg{width:16px;height:16px;stroke:var(--amber-light);fill:none;flex-shrink:0}
+.trust-sep{width:1px;height:20px;background:rgba(255,255,255,.12)}
+
+/* ABOUT */
+#about{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:600px}
+.about-img-wrap{position:relative;height:620px;overflow:hidden}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center}
+.about-img-caption{position:absolute;bottom:0;left:0;right:0;background:var(--forest-deep);padding:1.4rem 2rem;display:flex;align-items:center;gap:1.2rem}
+.about-img-caption p{font-family:var(--ff-serif);font-size:.95rem;color:var(--white);font-weight:400;font-style:italic}
+.about-text{padding:6rem 5vw}
+.eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem}
+.eyebrow-line{width:24px;height:1.5px;background:var(--amber)}
+.eyebrow span{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:500}
+.section-h2{font-family:var(--ff-serif);font-size:clamp(2rem,3vw,2.9rem);font-weight:700;line-height:1.18;color:var(--forest-deep);margin-bottom:1.2rem}
+.section-h2 em{font-style:italic;font-weight:400}
+.section-p{font-size:.95rem;line-height:1.9;color:var(--muted);margin-bottom:2rem}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.feat-item{background:var(--white);padding:1.4rem;transition:background .2s}
+.feat-item:hover{background:var(--ivory)}
+.feat-icon{width:36px;height:36px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;margin-bottom:.8rem}
+.feat-icon svg{width:18px;height:18px;stroke:var(--amber);fill:none;stroke-width:1.5}
+.feat-item h4{font-size:.88rem;font-weight:600;color:var(--forest-deep);margin-bottom:.3rem}
+.feat-item p{font-size:.82rem;line-height:1.7;color:var(--muted)}
+
+/* PRODUCTS */
+#products{padding:7rem 5vw;background:var(--ivory2)}
+.products-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+.products-top-right{font-size:.88rem;color:var(--muted);max-width:260px;line-height:1.7;text-align:right}
+.prod-grid-main{display:grid;grid-template-columns:2fr 1fr;gap:2px;background:var(--border)}
+.prod-grid-side{display:grid;grid-template-rows:1fr 1fr;gap:2px;background:var(--border)}
+.prod-card{position:relative;overflow:hidden;background:var(--ink)}
+.prod-card-main{height:460px}
+.prod-card-sm{height:229px}
+.prod-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .5s}
+.prod-card:hover img{transform:scale(1.05);filter:brightness(.7)}
+.prod-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,42,31,.88) 0%,rgba(17,42,31,.1) 55%,transparent 100%)}
+.prod-content{position:absolute;bottom:0;left:0;right:0;padding:1.8rem 2rem}
+.prod-cat{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-light);margin-bottom:.4rem}
+.prod-name{font-family:var(--ff-serif);font-size:1.7rem;color:var(--white);font-weight:700;line-height:1.2}
+.prod-desc{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.7;margin-top:.5rem;max-height:0;overflow:hidden;transition:max-height .4s}
+.prod-card:hover .prod-desc{max-height:100px}
+.prod-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:2px}
+.prod-card-mini{height:260px}
+.prod-more{background:var(--forest-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:2rem;text-align:center;cursor:pointer;transition:background .2s;height:260px}
+.prod-more:hover{background:var(--forest-mid)}
+.prod-more span{font-family:var(--ff-serif);font-size:2rem;color:var(--white);font-style:italic}
+.prod-more p{font-size:.78rem;color:rgba(255,255,255,.55);letter-spacing:.08em;line-height:1.6}
+
+/* CERTIFICATIONS */
+#certs{padding:6rem 0;background:var(--white);overflow:hidden}
+.certs-inner{padding:0 5vw;text-align:center;margin-bottom:3.5rem}
+.certs-inner .section-h2{margin-bottom:.6rem}
+.certs-inner .section-p{max-width:500px;margin:0 auto}
+.cert-track-wrap{position:relative;overflow:hidden;padding:1.5rem 0}
+.cert-track-wrap::before,.cert-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.cert-track-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.cert-track-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.cert-track{display:flex;gap:1.5rem;width:max-content;animation:slide 30s linear infinite}
+.cert-track:hover{animation-play-state:paused}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.cert-tile{flex:0 0 auto;width:210px;height:140px;border:1px solid var(--border);background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;transition:border-color .3s,background .3s;padding:1rem}
+.cert-tile:hover{border-color:var(--forest);background:var(--white)}
+.cert-abbr{font-family:var(--ff-serif);font-size:1.6rem;font-weight:700;color:var(--forest-deep);letter-spacing:.04em}
+.cert-tile-sub{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.5}
+.cert-divider{display:flex;align-items:center;gap:1.5rem;padding:2.5rem 5vw 0;opacity:.4}
+.cert-divider::before,.cert-divider::after{content:'';flex:1;height:1px;background:var(--border-strong)}
+.cert-divider span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+/* WHY */
+#why{padding:7rem 5vw;background:var(--ivory2)}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:3.5rem}
+.why-items{display:flex;flex-direction:column;gap:2.2rem}
+.why-item{display:flex;gap:1.4rem;padding-bottom:2.2rem;border-bottom:1px solid var(--border)}
+.why-item:last-child{border-bottom:none;padding-bottom:0}
+.why-n{font-family:var(--ff-serif);font-size:.8rem;font-weight:700;color:var(--amber);letter-spacing:.1em;padding-top:.2rem;flex-shrink:0}
+.why-item h3{font-family:var(--ff-serif);font-size:1.15rem;font-weight:700;color:var(--forest-deep);margin-bottom:.4rem}
+.why-item p{font-size:.88rem;line-height:1.85;color:var(--muted)}
+.why-visual{position:relative;height:560px}
+.why-img-a{position:absolute;top:0;left:0;width:80%;height:72%;object-fit:cover}
+.why-img-b{position:absolute;bottom:0;right:0;width:60%;height:48%;object-fit:cover;border:5px solid var(--ivory2)}
+.why-tag{position:absolute;top:calc(72% - 1.5rem);right:calc(20% + 1rem);background:var(--amber);color:var(--white);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.6rem 1rem;font-weight:500;white-space:nowrap}
+
+/* CONTACT */
+#contact{display:grid;grid-template-columns:1fr 1fr;background:var(--white)}
+.contact-left{padding:6rem 5vw;background:var(--forest-deep)}
+.contact-right{padding:6rem 5vw;background:var(--white)}
+.contact-left .eyebrow-line{background:var(--amber-light)}
+.contact-left .eyebrow span{color:var(--amber-light)}
+.contact-left .section-h2{color:var(--white)}
+.contact-left .section-p{color:rgba(255,255,255,.55)}
+.c-info-list{display:flex;flex-direction:column;gap:1.8rem;margin-top:2rem}
+.c-info-item{display:flex;gap:1rem;align-items:flex-start}
+.c-info-icon{width:40px;height:40px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.c-info-icon svg{width:18px;height:18px;stroke:var(--amber-light);fill:none;stroke-width:1.5}
+.c-info-label{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.3rem;font-weight:400}
+.c-info-val{font-size:.92rem;color:rgba(255,255,255,.8);line-height:1.7}
+.c-info-val a{color:rgba(255,255,255,.8);text-decoration:none;transition:color .2s}
+.c-info-val a:hover{color:var(--amber-light)}
+.cin-box{margin-top:2.5rem;padding:1.2rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.cin-box p{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.8;letter-spacing:.02em}
+.cin-box strong{color:rgba(255,255,255,.6)}
+/* Form */
+.form-title{font-family:var(--ff-serif);font-size:1.7rem;color:var(--forest-deep);margin-bottom:.4rem}
+.form-subtitle{font-size:.88rem;color:var(--muted);margin-bottom:2rem;line-height:1.7}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.f-group{margin-bottom:1rem}
+.f-group label{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:400}
+.f-group input,.f-group select,.f-group textarea{width:100%;background:var(--ivory);border:1px solid var(--border);color:var(--ink);font-family:var(--ff-sans);font-size:.9rem;font-weight:300;padding:.8rem 1rem;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--forest);background:var(--white)}
+.f-group textarea{height:120px;resize:vertical}
+.f-group select{cursor:pointer}
+.f-group select option{background:var(--white)}
+.f-submit{display:flex;align-items:center;gap:1.2rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn-submit{background:var(--forest-deep);color:var(--white);font-family:var(--ff-sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.9rem 2.2rem;border:none;cursor:pointer;transition:background .2s}
+.btn-submit:hover{background:var(--forest-mid)}
+.f-note{font-size:.75rem;color:var(--lighter);line-height:1.6}
+.form-ok{display:none;margin-top:1rem;padding:1rem 1.2rem;border-left:3px solid var(--amber);background:var(--amber-pale);color:var(--amber);font-size:.88rem;line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem}
+.footer-brand-name{font-family:var(--ff-serif);font-size:1.15rem;color:var(--white);font-weight:700}
+.footer-brand-name span{color:rgba(184,96,14,.8)}
+.footer-brand-sub{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.2rem;margin-bottom:1.2rem}
+.footer-brand-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.8;font-style:italic;font-family:var(--ff-serif)}
+.footer-col h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,96,14,.7);margin-bottom:1.2rem;font-weight:600}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.65rem}
+.footer-col ul li a{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:rgba(255,255,255,.75)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.75rem;color:rgba(255,255,255,.25)}
+.footer-bottom p span{color:rgba(255,255,255,.45)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+.reveal-d4{transition-delay:.4s}
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{height:340px}
+  #about{grid-template-columns:1fr}
+  .about-img-wrap{height:380px}
+  .prod-grid-main{grid-template-columns:1fr}
+  .prod-card-main{height:340px}
+  .prod-row2{grid-template-columns:1fr 1fr}
+  #contact{grid-template-columns:1fr}
+  .why-layout{grid-template-columns:1fr;gap:2.5rem}
+  .why-visual{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  nav .nav-links{display:none}
+}
+</style>
 </head>
 <body>
 
-  <!-- Shared Header -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.svg" alt="Chittampalli Exports" style="max-height: 50px; width: auto;">
-      </a>
-      <nav class="main-nav" aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-    </div>
-  </header>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">Chittampalli Exports</span>
+    <span class="nav-logo-sub">Private Limited</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Request a Quote</a>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h1 class="hero-headline">Premium Indian Agri-Exports to the World</h1>
-      <p class="tagline">Fresh Fruits · Vegetables · Spices · Rice &amp; Cereals</p>
-      <a href="products.html" class="btn btn-primary hero-cta">Explore Our Products</a>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span>Karimnagar, Telangana, India</span>
     </div>
-  </section>
-
-  <!-- Product Cards Section -->
-  <section id="product-categories" class="section">
-    <div class="container">
-      <h2 class="section-title" data-animate="fade-up">Our Export Categories</h2>
-      <div class="grid grid-4">
-        <article class="product-card" data-animate="fade-up" data-animate-delay="100">
-          <div class="card-image">
-            <img src="images/products/fruits.jpg" alt="Fresh Indian export fruits including mangoes, grapes, and pomegranates" loading="lazy"
-              onerror="this.onerror=null;this.classList.add('img-fallback');this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%2340916c%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2220%22 font-family=%22sans-serif%22%3EFresh Fruits%3C/text%3E%3C/svg%3E';">
-          </div>
-          <div class="card-content">
-            <h3>Fresh Fruits</h3>
-            <p>Alphonso Mangoes, Grapes, Pomegranates, Bananas — handpicked for global markets.</p>
-            <a href="products.html#fruits" class="btn btn-outline">View Products</a>
-          </div>
-        </article>
-        <article class="product-card" data-animate="fade-up" data-animate-delay="200">
-          <div class="card-image">
-            <img src="images/products/vegetables.jpg" alt="Fresh Indian vegetables including onions, potatoes, and green chilies" loading="lazy"
-              onerror="this.onerror=null;this.classList.add('img-fallback');this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%232d6a4f%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2220%22 font-family=%22sans-serif%22%3EVegetables%3C/text%3E%3C/svg%3E';">
-          </div>
-          <div class="card-content">
-            <h3>Vegetables</h3>
-            <p>Onions, Potatoes, Green Chilies, Tomatoes — farm-fresh and export-ready.</p>
-            <a href="products.html#vegetables" class="btn btn-outline">View Products</a>
-          </div>
-        </article>
-        <article class="product-card" data-animate="fade-up" data-animate-delay="300">
-          <div class="card-image">
-            <img src="images/products/spices.jpg" alt="Aromatic Indian spices including turmeric, cumin, and cardamom" loading="lazy"
-              onerror="this.onerror=null;this.classList.add('img-fallback');this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23b8860b%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2220%22 font-family=%22sans-serif%22%3ESpices%3C/text%3E%3C/svg%3E';">
-          </div>
-          <div class="card-content">
-            <h3>Spices</h3>
-            <p>Turmeric, Cumin, Cardamom, Red Chili — authentic Indian flavors for the world.</p>
-            <a href="products.html#spices" class="btn btn-outline">View Products</a>
-          </div>
-        </article>
-        <article class="product-card" data-animate="fade-up" data-animate-delay="400">
-          <div class="card-image">
-            <img src="images/products/rice.jpg" alt="Premium Indian rice and cereals including basmati rice and wheat" loading="lazy"
-              onerror="this.onerror=null;this.classList.add('img-fallback');this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23d4a017%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2220%22 font-family=%22sans-serif%22%3ERice %26 Cereals%3C/text%3E%3C/svg%3E';">
-          </div>
-          <div class="card-content">
-            <h3>Rice &amp; Cereals</h3>
-            <p>Basmati Rice, Non-Basmati Rice, Wheat, Pulses — premium grains from India.</p>
-            <a href="products.html#rice-cereals" class="btn btn-outline">View Products</a>
-          </div>
-        </article>
+    <h1 class="hero-h1 reveal reveal-d1">
+      India's Finest<br>Farm <em>Harvests,</em><br>Delivered Globally
+    </h1>
+    <p class="hero-p reveal reveal-d2">
+      Chittampalli Exports is a certified Indian agri-exporter supplying premium fresh fruits, vegetables, rice, cereals and spices to international buyers with full regulatory compliance.
+    </p>
+    <div class="hero-actions reveal reveal-d3">
+      <a href="#products" class="btn-fill">View Products</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats reveal reveal-d4">
+      <div class="hero-stat">
+        <div class="hero-stat-n">5</div>
+        <div class="hero-stat-l">Certifications</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">100%</div>
+        <div class="hero-stat-l">Quality Checked</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">Global</div>
+        <div class="hero-stat-l">Export Reach</div>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="hero-right reveal">
+    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=85" alt="Fresh farm produce" loading="eager">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-badge">
+      <p>Telangana's Premier Agri-Exporter</p>
+      <small>Established 2026 · CIN Registered</small>
+    </div>
+  </div>
+</section>
 
-  <!-- Trust Bar Section -->
-  <section id="trust-bar" class="section section-alt trust-bar">
-    <div class="container">
-      <h2 class="section-title">Our Certifications</h2>
-      <div class="cert-scroll-wrapper">
-        <div class="cert-grid cert-scroll" data-animate="fade-in">
-          <div class="cert-item">
-            <img src="images/certs/apeda.png" alt="APEDA Certified" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">APEDA</span>
-            <span class="cert-name">APEDA</span>
-            <span class="cert-number">Registration: APEDA/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/iec.svg" alt="IEC Code" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">IEC</span>
-            <span class="cert-name">IEC</span>
-            <span class="cert-number">Code: IECXXXXXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/spiceboard.png" alt="Spice Board Registration" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">Spice Board</span>
-            <span class="cert-name">Spice Board</span>
-            <span class="cert-number">Registration: SB/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/fieo.png" alt="FIEO Membership" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">FIEO</span>
-            <span class="cert-name">FIEO</span>
-            <span class="cert-number">Membership: FIEO/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/fssai.png" alt="FSSAI Licensed" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">FSSAI</span>
-            <span class="cert-name">FSSAI</span>
-            <span class="cert-number">License: FSSAI/XXXXX</span>
-          </div>
-          <!-- Duplicate items for seamless scrolling -->
-          <div class="cert-item">
-            <img src="images/certs/apeda.png" alt="APEDA Certified" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">APEDA</span>
-            <span class="cert-name">APEDA</span>
-            <span class="cert-number">Registration: APEDA/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/iec.svg" alt="IEC Code" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">IEC</span>
-            <span class="cert-name">IEC</span>
-            <span class="cert-number">Code: IECXXXXXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/spiceboard.png" alt="Spice Board Registration" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">Spice Board</span>
-            <span class="cert-name">Spice Board</span>
-            <span class="cert-number">Registration: SB/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/fieo.png" alt="FIEO Membership" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">FIEO</span>
-            <span class="cert-name">FIEO</span>
-            <span class="cert-number">Membership: FIEO/XXXXX</span>
-          </div>
-          <div class="cert-item">
-            <img src="images/certs/fssai.png" alt="FSSAI Licensed" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="cert-logo-fallback" aria-hidden="true">FSSAI</span>
-            <span class="cert-name">FSSAI</span>
-            <span class="cert-number">License: FSSAI/XXXXX</span>
-          </div>
+<!-- TRUST BAR -->
+<div id="trustbar">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+    FSSAI Certified
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    APEDA Registered
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+    FIEO Member
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M9 14l6-6M9.5 8.5a1 1 0 110 2 1 1 0 010-2zM14.5 13.5a1 1 0 110 2 1 1 0 010-2M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    IEC Authorised
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+    Spices Board Certified
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&q=85" alt="Fresh produce close-up" loading="lazy">
+    <div class="about-img-caption">
+      <p>"Rooted in India's agricultural heartland, growing with the world."</p>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="eyebrow reveal">
+      <div class="eyebrow-line"></div>
+      <span>Who We Are</span>
+    </div>
+    <h2 class="section-h2 reveal reveal-d1">A Telangana Company<br>Trading with the <em>World</em></h2>
+    <p class="section-p reveal reveal-d2">
+      Founded in Karimnagar, Chittampalli Exports Private Limited bridges India's abundant farmlands with global markets. We source directly from verified farms across Telangana and Andhra Pradesh, applying rigorous grading and quality controls before every shipment.
+    </p>
+    <p class="section-p reveal reveal-d2" style="margin-top:-.8rem">
+      Our regulatory registrations across FIEO, APEDA, FSSAI, IEC and the Spices Board ensure every consignment meets destination-country import standards — without surprises.
+    </p>
+    <div class="feat-grid reveal reveal-d3">
+      <div class="feat-item">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Direct Farm Sourcing</h4>
+        <p>Traceable supply chains straight from farmer to freight — no middlemen.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h4>Certified & Compliant</h4>
+        <p>All five major agri-export certifications in place for smooth customs clearance.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8zM1 16h15M8 19a2 2 0 100 4 2 2 0 000-4zM18 19a2 2 0 100 4 2 2 0 000-4z"/></svg>
+        </div>
+        <h4>End-to-End Logistics</h4>
+        <p>Cold chain, freight, fumigation and documentation — fully managed.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h4>Global Market Access</h4>
+        <p>Established export lanes to Middle East, Europe, Southeast Asia and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-top reveal">
+    <div>
+      <div class="eyebrow" style="margin-bottom:1rem">
+        <div class="eyebrow-line"></div>
+        <span>Export Catalogue</span>
+      </div>
+      <h2 class="section-h2" style="margin-bottom:0">What We <em>Export</em></h2>
+    </div>
+    <p class="products-top-right">Premium produce graded to international phytosanitary and quality standards — ready for global dispatch.</p>
+  </div>
+
+  <div class="prod-grid-main reveal reveal-d1">
+    <div class="prod-card prod-card-main">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1000&q=80" alt="Fresh Vegetables" loading="lazy">
+      <div class="prod-overlay"></div>
+      <div class="prod-content">
+        <div class="prod-cat">Category 01</div>
+        <div class="prod-name">Fresh Vegetables</div>
+        <div class="prod-desc">Premium okra, bitter gourd, brinjal, drumstick, ivy gourd, ridge gourd — hand-selected and export-graded for global markets.</div>
+      </div>
+    </div>
+    <div class="prod-grid-side">
+      <div class="prod-card prod-card-sm">
+        <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=700&q=80" alt="Fresh Fruits" loading="lazy">
+        <div class="prod-overlay"></div>
+        <div class="prod-content">
+          <div class="prod-cat">Category 02</div>
+          <div class="prod-name">Fresh Fruits</div>
+          <div class="prod-desc">Mangoes, bananas, pomegranates, guavas — carefully packed for export.</div>
+        </div>
+      </div>
+      <div class="prod-card prod-card-sm">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=700&q=80" alt="Rice" loading="lazy">
+        <div class="prod-overlay"></div>
+        <div class="prod-content">
+          <div class="prod-cat">Category 03</div>
+          <div class="prod-name">Rice</div>
+          <div class="prod-desc">Basmati, Sona Masoori, non-basmati in bulk and retail packs.</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Shared Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <img src="images/logo-white.svg" alt="Chittampalli Exports" class="footer-logo" loading="lazy">
-        <p>Premium Indian agricultural exports to global markets.</p>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <address>
-          8-1-605/3, Mahalaxmi Nagar,<br>
-          Karimnagar, Karim Nagar District,<br>
-          Telangana, India — 505001
-        </address>
-        <p>CIN: U46305TS2026PTC213988</p>
-        <p>Email: <a href="mailto:info@chittampalliexports.com">info@chittampalliexports.com</a></p>
-        <p>Phone: <a href="tel:+91878XXXXXXX">+91-878-XXX-XXXX</a></p>
+  <div class="prod-row2 reveal reveal-d2">
+    <div class="prod-card prod-card-mini">
+      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" alt="Spices" loading="lazy">
+      <div class="prod-overlay"></div>
+      <div class="prod-content">
+        <div class="prod-cat">Category 04</div>
+        <div class="prod-name">Spices</div>
+        <div class="prod-desc">Spices Board certified red chilli, turmeric, coriander, cumin and pepper.</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Chittampalli Exports Private Limited. All rights reserved.</p>
+    <div class="prod-card prod-card-mini">
+      <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="Cereals" loading="lazy">
+      <div class="prod-overlay"></div>
+      <div class="prod-content">
+        <div class="prod-cat">Category 05</div>
+        <div class="prod-name">Cereals &amp; Millets</div>
+        <div class="prod-desc">Jowar, bajra, ragi, maize and sorghum in export-quality bulk lots.</div>
+      </div>
     </div>
-  </footer>
+    <div class="prod-more">
+      <span>+More</span>
+      <p>Pulses, dry fruits &amp; seasonal produce available on enquiry</p>
+      <a href="#contact" class="btn-fill" style="font-size:.72rem;padding:.65rem 1.4rem">Enquire Now</a>
+    </div>
+  </div>
+</section>
 
-  <!-- JavaScript (deferred) -->
-  <script src="js/main.js" defer></script>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="certs-inner reveal">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:1rem">
+      <div class="eyebrow-line"></div>
+      <span>Licences &amp; Certifications</span>
+      <div class="eyebrow-line"></div>
+    </div>
+    <h2 class="section-h2">Backed by India's <em>Foremost</em><br>Export Authorities</h2>
+    <p class="section-p" style="margin:0 auto">All registrations are current, valid and available for buyer verification upon request.</p>
+  </div>
+
+  <div class="cert-track-wrap">
+    <div class="cert-track" id="certTrack">
+      <div class="cert-tile">
+        <img src="images/certs/fieo.png" alt="FIEO" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">FIEO</span>
+        <span class="cert-tile-sub">Federation of Indian Export Organisations</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/fssai.png" alt="FSSAI" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">FSSAI</span>
+        <span class="cert-tile-sub">Food Safety &amp; Standards Authority of India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/spiceboard.png" alt="Spices Board" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr" style="font-size:1.1rem">Spices Board</span>
+        <span class="cert-tile-sub">Ministry of Commerce &amp; Industry, India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/iec.svg" alt="IEC" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">IEC</span>
+        <span class="cert-tile-sub">Import Export Code — DGFT, India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/apeda.png" alt="APEDA" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">APEDA</span>
+        <span class="cert-tile-sub">Agri &amp; Processed Food Export Development Authority</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/fieo.png" alt="FIEO" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">FIEO</span>
+        <span class="cert-tile-sub">Federation of Indian Export Organisations</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/fssai.png" alt="FSSAI" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">FSSAI</span>
+        <span class="cert-tile-sub">Food Safety &amp; Standards Authority of India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/spiceboard.png" alt="Spices Board" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr" style="font-size:1.1rem">Spices Board</span>
+        <span class="cert-tile-sub">Ministry of Commerce &amp; Industry, India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/iec.svg" alt="IEC" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">IEC</span>
+        <span class="cert-tile-sub">Import Export Code — DGFT, India</span>
+      </div>
+      <div class="cert-tile">
+        <img src="images/certs/apeda.png" alt="APEDA" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
+        <span class="cert-abbr">APEDA</span>
+        <span class="cert-tile-sub">Agri &amp; Processed Food Export Development Authority</span>
+      </div>
+    </div>
+  </div>
+  <div class="cert-divider reveal"><span>Verified · Compliant · Trusted</span></div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>Why Choose Us</span></div>
+  <h2 class="section-h2 reveal reveal-d1">The <em>Chittampalli</em><br>Difference</h2>
+  <div class="why-layout">
+    <div class="why-items">
+      <div class="why-item reveal">
+        <span class="why-n">01</span>
+        <div>
+          <h3>Direct Farm Partnerships</h3>
+          <p>We work directly with vetted farmers across Telangana and AP — ensuring provenance, freshness and fair pricing throughout the supply chain.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-d1">
+        <span class="why-n">02</span>
+        <div>
+          <h3>Multi-Authority Compliance</h3>
+          <p>FIEO, APEDA, FSSAI, Spices Board and IEC registrations mean your cargo clears customs without delays — in any destination market.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-d2">
+        <span class="why-n">03</span>
+        <div>
+          <h3>Cold Chain Infrastructure</h3>
+          <p>Refrigerated transport, phytosanitary treatment and export-grade packaging preserve quality from farm gate to destination port.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-d3">
+        <span class="why-n">04</span>
+        <div>
+          <h3>Dedicated Account Support</h3>
+          <p>A named relationship manager handles your orders, documentation and shipment tracking — keeping you informed at every milestone.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal reveal-d1">
+      <img class="why-img-a" src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=900&q=80" alt="Quality inspection" loading="lazy">
+      <img class="why-img-b" src="https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=600&q=80" alt="Spices" loading="lazy">
+      <div class="why-tag">Quality at every step</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>Get in Touch</span></div>
+    <h2 class="section-h2 reveal reveal-d1" style="color:var(--white)">Let's Start a<br><em style="color:rgba(212,120,42,.9)">Conversation</em></h2>
+    <p class="section-p reveal reveal-d2">Ready to source? We respond to all enquiries within one business day and provide samples on request.</p>
+    <div class="c-info-list">
+      <div class="c-info-item reveal reveal-d2">
+        <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <div>
+          <div class="c-info-label">Registered Office</div>
+          <div class="c-info-val">8-1-605/3, Mahalaxmi Nagar,<br>Karimnagar, Karim Nagar District,<br>Telangana, India — 505001</div>
+        </div>
+      </div>
+      <div class="c-info-item reveal reveal-d3">
+        <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="c-info-label">Email</div>
+          <div class="c-info-val"><a href="mailto:info@chittampalliexports.com">info@chittampalliexports.com</a></div>
+        </div>
+      </div>
+      <div class="c-info-item reveal reveal-d3">
+        <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="c-info-label">Phone / WhatsApp</div>
+          <div class="c-info-val"><a href="tel:+916301419503">+91-6301419503</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="cin-box reveal reveal-d4">
+      <p><strong>CIN: U46305TS2026PTC213988</strong><br>Registered under Ministry of Corporate Affairs, Government of India</p>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <h3 class="form-title reveal">Send an Enquiry</h3>
+    <p class="form-subtitle reveal reveal-d1">Fill in the details below and our team will get back to you within 24 hours.</p>
+    <form id="cForm" onsubmit="submitForm(event)">
+      <div class="f-row">
+        <div class="f-group reveal">
+          <label>Full Name *</label>
+          <input type="text" name="name" required placeholder="Your full name">
+        </div>
+        <div class="f-group reveal reveal-d1">
+          <label>Company Name</label>
+          <input type="text" name="company" placeholder="Your company">
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group reveal">
+          <label>Email Address *</label>
+          <input type="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="f-group reveal reveal-d1">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" name="phone" placeholder="+1 555 000 0000">
+        </div>
+      </div>
+      <div class="f-group reveal">
+        <label>Product Interest</label>
+        <select name="product">
+          <option value="">— Select a category —</option>
+          <option>Fresh Vegetables</option>
+          <option>Fresh Fruits</option>
+          <option>Rice (Basmati / Non-Basmati)</option>
+          <option>Spices</option>
+          <option>Cereals &amp; Millets</option>
+          <option>Pulses</option>
+          <option>Multiple / Other</option>
+        </select>
+      </div>
+      <div class="f-group reveal reveal-d1">
+        <label>Destination Country / Port</label>
+        <input type="text" name="destination" placeholder="e.g. UAE / Jebel Ali">
+      </div>
+      <div class="f-group reveal reveal-d2">
+        <label>Message &amp; Quantity Requirements</label>
+        <textarea name="message" placeholder="Describe your requirements, volumes, delivery timeline…"></textarea>
+      </div>
+      <div class="f-submit reveal reveal-d3">
+        <button type="submit" class="btn-submit">Send Enquiry &rarr;</button>
+        <p class="f-note">Replied within 1 business day.<br>All enquiries treated in strict confidence.</p>
+      </div>
+      <div class="form-ok" id="formOk">
+        ✓ &nbsp;Thank you — your enquiry has been received. We'll be in touch within one business day.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Chittampalli <span>Exports</span> Private Limited</div>
+      <div class="footer-brand-sub">Karimnagar, Telangana, India</div>
+      <div class="footer-brand-desc">"Bringing the finest of India's farms to tables across the world."</div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">Fresh Vegetables</a></li>
+        <li><a href="#products">Fresh Fruits</a></li>
+        <li><a href="#products">Rice &amp; Cereals</a></li>
+        <li><a href="#products">Spices</a></li>
+        <li><a href="#products">Pulses &amp; More</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Certifications</h4>
+      <ul>
+        <li><a href="#certs">FIEO</a></li>
+        <li><a href="#certs">FSSAI</a></li>
+        <li><a href="#certs">Spices Board</a></li>
+        <li><a href="#certs">IEC</a></li>
+        <li><a href="#certs">APEDA</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 <span>Chittampalli Exports Private Limited</span>. All rights reserved.</p>
+    <p>CIN: U46305TS2026PTC213988</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 50));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+function submitForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  const form = e.target;
+  const formData = new FormData(form);
+  
+  // Convert FormData to object
+  const data = {};
+  for (let [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+  
+  btn.textContent = 'Sending…'; 
+  btn.disabled = true;
+  
+  // Send to API function (works for both Vercel and Cloudflare)
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.success) {
+      document.getElementById('formOk').style.display = 'block';
+      document.getElementById('formOk').textContent = '✓ ' + result.message;
+      form.reset();
+      document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'nearest'});
+    } else {
+      throw new Error(result.error || 'Failed to send enquiry');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('formOk').style.display = 'block';
+    document.getElementById('formOk').style.background = '#ffebee';
+    document.getElementById('formOk').style.color = '#c62828';
+    document.getElementById('formOk').style.borderColor = '#ef9a9a';
+    document.getElementById('formOk').textContent = '✗ ' + (error.message || 'Failed to send enquiry. Please try again or contact us directly.');
+    document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'nearest'});
+  })
+  .finally(() => {
+    btn.textContent = 'Send Enquiry →'; 
+    btn.disabled = false;
+  });
+}
+</script>
 </body>
 </html>
