@@ -69,6 +69,10 @@ nav.stuck{border-color:var(--border);box-shadow:0 1px 24px rgba(0,0,0,.06)}
 .hero-badge{position:absolute;bottom:2rem;left:2rem;background:var(--white);padding:1rem 1.4rem;border-left:3px solid var(--amber);z-index:2}
 .hero-badge p{font-family:var(--ff-serif);font-size:.95rem;color:var(--forest-deep);font-weight:700}
 .hero-badge small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hero-mobile-title{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:3;width:90%;max-width:500px}
+.hero-mobile-title h1{font-family:var(--ff-serif);font-size:clamp(1.8rem,5vw,3rem);color:var(--white);text-shadow:2px 2px 8px rgba(0,0,0,.7);line-height:1.2;margin-bottom:1.5rem}
+.hero-mobile-title h1 em{font-style:italic;color:var(--amber-light)}
+.hero-mobile-title .btn-fill{display:inline-block}
 
 /* TRUST BAR */
 #trustbar{background:var(--forest-deep);padding:1.4rem 5vw;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
@@ -133,10 +137,11 @@ nav.stuck{border-color:var(--border);box-shadow:0 1px 24px rgba(0,0,0,.06)}
 .cert-track{display:flex;gap:1.5rem;width:max-content;animation:slide 30s linear infinite}
 .cert-track:hover{animation-play-state:paused}
 @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.cert-tile{flex:0 0 auto;width:210px;height:140px;border:1px solid var(--border);background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;transition:border-color .3s,background .3s;padding:1rem}
+.cert-tile{flex:0 0 auto;width:210px;height:160px;border:1px solid var(--border);background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;transition:border-color .3s,background .3s;padding:1rem}
 .cert-tile:hover{border-color:var(--forest);background:var(--white)}
 .cert-abbr{font-family:var(--ff-serif);font-size:1.6rem;font-weight:700;color:var(--forest-deep);letter-spacing:.04em}
 .cert-tile-sub{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.5}
+.cert-tile-number{font-size:.6rem;letter-spacing:.05em;color:var(--forest);background:var(--amber-pale);padding:.3rem .6rem;border-radius:3px;margin-top:.3rem;font-weight:500;font-family:var(--ff-sans)}
 .cert-divider{display:flex;align-items:center;gap:1.5rem;padding:2.5rem 5vw 0;opacity:.4}
 .cert-divider::before,.cert-divider::after{content:'';flex:1;height:1px;background:var(--border-strong)}
 .cert-divider span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
@@ -237,19 +242,14 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
 }
 
 @media(max-width:600px){
-  #hero{padding-top:60px}
-  .hero-left{padding:3vw 4vw!important;min-height:auto}
-  .hero-h1{font-size:clamp(1.5rem,2.8vw,2rem)!important}
-  .hero-p{font-size:0.85rem}
-  .hero-eyebrow span{font-size:0.65rem}
-  .hero-actions{flex-direction:column}
-  .hero-actions a{width:100%}
-  .btn-fill,.btn-outline{width:100%;text-align:center}
-  .hero-stats{margin-top:2rem}
-  .hero-stat-n{font-size:1.5rem}
-  .hero-stat-l{font-size:0.65rem}
-  .hero-right{height:280px}
-  .hero-badge{bottom:1rem;left:1rem;right:1rem;padding:0.8rem 1rem;font-size:0.75rem}
+  #hero{padding-top:60px;display:block}
+  .hero-left{display:none}
+  .hero-mobile-title{display:block!important}
+  .hero-right{height:calc(100vh - 72px);min-height:500px;position:relative}
+  .hero-right-overlay{background:linear-gradient(to top,rgba(17,42,31,.9) 0%,rgba(17,42,31,.5) 40%,rgba(17,42,31,.3) 70%,transparent 100%)}
+  .hero-badge{display:none}
+  .hero-mobile-title h1{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:1.2rem}
+  .hero-mobile-title .btn-fill{font-size:0.75rem;padding:0.8rem 1.8rem}
   .prod-row2{grid-template-columns:1fr}
   .contact-left,.contact-right{padding:3rem 4vw}
   .form-title{font-size:1.4rem}
@@ -309,6 +309,10 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
   <div class="hero-right reveal">
     <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=85" alt="Fresh farm produce" loading="eager">
     <div class="hero-right-overlay"></div>
+    <div class="hero-mobile-title">
+      <h1>India's Finest<br>Farm <em>Harvests,</em><br>Delivered Globally</h1>
+      <a href="#products" class="btn-fill">View Products</a>
+    </div>
     <div class="hero-badge">
       <p>India's Premier Agri-Exporter</p>
       <small>Established 2026 · Global Trade</small>
@@ -487,51 +491,62 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
         <img src="images/certs/fieo.png" alt="FIEO" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">FIEO</span>
         <span class="cert-tile-sub">Federation of Indian Export Organisations</span>
+        <span class="cert-tile-number">RCMC/FIEO/16852/2026-2027</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/fssai.png" alt="FSSAI" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">FSSAI</span>
         <span class="cert-tile-sub">Food Safety &amp; Standards Authority of India</span>
+        <span class="cert-tile-number">13626999000391</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/spiceboard.png" alt="Spices Board" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr" style="font-size:1.1rem">Spices Board</span>
         <span class="cert-tile-sub">Ministry of Commerce &amp; Industry, India</span>
+        <span class="cert-tile-number">CRES/SBCB/28352/2026-2027</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/iec.svg" alt="IEC" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">IEC</span>
         <span class="cert-tile-sub">Import Export Code — DGFT, India</span>
+        <span class="cert-tile-number">AANCC7219H</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/apeda.png" alt="APEDA" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">APEDA</span>
         <span class="cert-tile-sub">Agri &amp; Processed Food Export Development Authority</span>
+        <span class="cert-tile-number">RCMC/APEDA/29677/2026-2027</span>
       </div>
+      <!-- Duplicate for seamless scroll -->
       <div class="cert-tile">
         <img src="images/certs/fieo.png" alt="FIEO" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">FIEO</span>
         <span class="cert-tile-sub">Federation of Indian Export Organisations</span>
+        <span class="cert-tile-number">RCMC/FIEO/16852/2026-2027</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/fssai.png" alt="FSSAI" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">FSSAI</span>
         <span class="cert-tile-sub">Food Safety &amp; Standards Authority of India</span>
+        <span class="cert-tile-number">13626999000391</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/spiceboard.png" alt="Spices Board" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr" style="font-size:1.1rem">Spices Board</span>
         <span class="cert-tile-sub">Ministry of Commerce &amp; Industry, India</span>
+        <span class="cert-tile-number">CRES/SBCB/28352/2026-2027</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/iec.svg" alt="IEC" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">IEC</span>
         <span class="cert-tile-sub">Import Export Code — DGFT, India</span>
+        <span class="cert-tile-number">AANCC7219H</span>
       </div>
       <div class="cert-tile">
         <img src="images/certs/apeda.png" alt="APEDA" style="width:60px;height:40px;object-fit:contain;margin-bottom:8px;">
         <span class="cert-abbr">APEDA</span>
         <span class="cert-tile-sub">Agri &amp; Processed Food Export Development Authority</span>
+        <span class="cert-tile-number">RCMC/APEDA/29677/2026-2027</span>
       </div>
     </div>
   </div>
