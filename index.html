@@ -218,6 +218,12 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
 @media(max-width:960px){
   #hero{grid-template-columns:1fr}
   .hero-right{height:340px}
+  .hero-left{padding:4vw 5vw!important}
+  .hero-h1{font-size:clamp(1.8rem,3.5vw,2.6rem)!important}
+  .hero-p{font-size:0.9rem}
+  .hero-stats{flex-direction:column;gap:1.5rem;padding-top:1.5rem}
+  .hero-stat{padding-right:0;margin-right:0;border-right:none;border-bottom:1px solid var(--border);padding-bottom:1rem}
+  .hero-stat:last-child{border-bottom:none}
   #about{grid-template-columns:1fr}
   .about-img-wrap{height:380px}
   .prod-grid-main{grid-template-columns:1fr}
@@ -228,6 +234,25 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
   .why-visual{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
   nav .nav-links{display:none}
+}
+
+@media(max-width:600px){
+  #hero{padding-top:60px}
+  .hero-left{padding:3vw 4vw!important;min-height:auto}
+  .hero-h1{font-size:clamp(1.5rem,2.8vw,2rem)!important}
+  .hero-p{font-size:0.85rem}
+  .hero-eyebrow span{font-size:0.65rem}
+  .hero-actions{flex-direction:column}
+  .hero-actions a{width:100%}
+  .btn-fill,.btn-outline{width:100%;text-align:center}
+  .hero-stats{margin-top:2rem}
+  .hero-stat-n{font-size:1.5rem}
+  .hero-stat-l{font-size:0.65rem}
+  .hero-right{height:280px}
+  .hero-badge{bottom:1rem;left:1rem;right:1rem;padding:0.8rem 1rem;font-size:0.75rem}
+  .prod-row2{grid-template-columns:1fr}
+  .contact-left,.contact-right{padding:3rem 4vw}
+  .form-title{font-size:1.4rem}
 }
 </style>
 </head>
@@ -268,8 +293,8 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
     </div>
     <div class="hero-stats reveal reveal-d4">
       <div class="hero-stat">
-        <div class="hero-stat-n">5</div>
-        <div class="hero-stat-l">Certifications</div>
+        <div class="hero-stat-n">150+</div>
+        <div class="hero-stat-l">Products</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-n">100%</div>
@@ -285,8 +310,8 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
     <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=85" alt="Fresh farm produce" loading="eager">
     <div class="hero-right-overlay"></div>
     <div class="hero-badge">
-      <p>Telangana's Premier Agri-Exporter</p>
-      <small>Established 2026 · CIN Registered</small>
+      <p>India's Premier Agri-Exporter</p>
+      <small>Established 2026 · Global Trade</small>
     </div>
   </div>
 </section>
@@ -387,12 +412,12 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
 
   <div class="prod-grid-main reveal reveal-d1">
     <div class="prod-card prod-card-main">
-      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1000&q=80" alt="Fresh Vegetables" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1000&q=80" alt="Spices" loading="lazy">
       <div class="prod-overlay"></div>
       <div class="prod-content">
         <div class="prod-cat">Category 01</div>
-        <div class="prod-name">Fresh Vegetables</div>
-        <div class="prod-desc">Premium okra, bitter gourd, brinjal, drumstick, ivy gourd, ridge gourd — hand-selected and export-graded for global markets.</div>
+        <div class="prod-name">Spices</div>
+        <div class="prod-desc">Spices Board certified red chilli, turmeric, coriander, cumin, pepper and more — hand-selected for global markets.</div>
       </div>
     </div>
     <div class="prod-grid-side">
@@ -406,12 +431,12 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
         </div>
       </div>
       <div class="prod-card prod-card-sm">
-        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=700&q=80" alt="Rice" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=700&q=80" alt="Fresh Vegetables" loading="lazy">
         <div class="prod-overlay"></div>
         <div class="prod-content">
           <div class="prod-cat">Category 03</div>
-          <div class="prod-name">Rice</div>
-          <div class="prod-desc">Basmati, Sona Masoori, non-basmati in bulk and retail packs.</div>
+          <div class="prod-name">Fresh Vegetables</div>
+          <div class="prod-desc">Premium okra, bitter gourd, brinjal, drumstick, ivy gourd, ridge gourd — export-graded.</div>
         </div>
       </div>
     </div>
@@ -419,12 +444,12 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
 
   <div class="prod-row2 reveal reveal-d2">
     <div class="prod-card prod-card-mini">
-      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" alt="Spices" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80" alt="Rice" loading="lazy">
       <div class="prod-overlay"></div>
       <div class="prod-content">
         <div class="prod-cat">Category 04</div>
-        <div class="prod-name">Spices</div>
-        <div class="prod-desc">Spices Board certified red chilli, turmeric, coriander, cumin and pepper.</div>
+        <div class="prod-name">Rice</div>
+        <div class="prod-desc">Basmati, Sona Masoori, non-basmati in bulk and retail packs.</div>
       </div>
     </div>
     <div class="prod-card prod-card-mini">
@@ -584,9 +609,6 @@ footer{background:var(--forest-deep);padding:4.5rem 5vw 2rem}
           <div class="c-info-val"><a href="tel:+916301419503">+91-6301419503</a></div>
         </div>
       </div>
-    </div>
-    <div class="cin-box reveal reveal-d4">
-      <p><strong>CIN: U46305TS2026PTC213988</strong><br>Registered under Ministry of Corporate Affairs, Government of India</p>
     </div>
   </div>
 
