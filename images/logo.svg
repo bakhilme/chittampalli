@@ -7,6 +7,6 @@
     <path d="M20 20 C24 18 26 14 24 10" fill="none" stroke="#40916c" stroke-width="1" stroke-linecap="round"/>
   </g>
   <!-- Company name -->
-  <text x="50" y="18" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#1b4332">Chittampalli Exports</text>
-  <text x="50" y="35" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#2d6a4f">Private Limited</text>
+  <text x="50" y="18" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#ffffff">Chittampalli Exports</text>
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#ffffff">Private Limited</text>
 </svg>
