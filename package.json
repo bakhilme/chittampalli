@@ -4,11 +4,9 @@
   "description": "Official website for Chittampalli Exports Private Limited",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site - no build required'"
+    "build": "echo 'Static site ready for deployment'"
   },
-  "dependencies": {
-    "resend": "^3.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "keywords": [
     "exports",
